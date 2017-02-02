@@ -6,7 +6,7 @@
 
 ## Requirements
 
-1. This module needs Python 2.x, [Numpy], [SciPy], [datetime], [ast]
+1. This module needs Python 2.x, [Numpy](http://www.scipy.org/scipylib/download.html), [SciPy](http://www.scipy.org/scipylib/download.html), [datetime](https://docs.python.org/2/library/datetime.html), [ast](https://docs.python.org/2/library/ast.html)
 
 ## Citations
 
@@ -16,8 +16,3 @@
 
 
 1. `python main.py sample/star-white-clipart.jpg [[300,300]]` reads the file sample from sample folder with one pixel as seed at [300,300]
-
-[NumPy] : http://www.scipy.org/scipylib/download.html
-[SciPy] : http://www.scipy.org/scipylib/download.html
-[datetime] : https://docs.python.org/2/library/datetime.html
-[ast] : https://docs.python.org/2/library/ast.html
