@@ -1,6 +1,6 @@
 # RegionGrowingAlgorithm
 
-1. This algorithm is used to used for region segmentation based on user-choosen seed pixels.
+1. This algorithm is used for region segmentation based on user-choosen seed pixels.
 2. This [paper](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.59.8092&rep=rep1&type=pdf) describes the method presented in the code.
 
 ## Requirements
