@@ -4,7 +4,7 @@ from scipy.misc import *
 from utilities import preprocessingImage as ppi
 
 class RegionGrowing(object):
-	def regionGrowing(self, image_array, seed_point, threshold = 0.5, iterations = 120):
+	def regionGrowing(self, image_array, seed_point_path, threshold, iterations):
 		'''
 			Description : Main function caller
 			image_array : type : nd-array of an image
@@ -12,6 +12,7 @@ class RegionGrowing(object):
 			threshold : type : float, the threshold for stopping iterations
 			iterations : type: int, number of iterations for region growing
 		'''
+		seed_point = self.seedPoints(seed_point_path)
 		image_array_padded = self.padImages(image_array)
 		size = np.shape(image_array)
 		actual_weights_image = np.zeros(size)
@@ -28,6 +29,10 @@ class RegionGrowing(object):
 			actual_weights_image = temp_actual_weights_image[1:size[0]+1,1:size[1]+1]
 		self.saveImage(self.makeBinaryImage(actual_weights_image))			
 
+	def seedPoints(self, filepath):
+		fid = open(filepath,'rb')
+		return [list(map(lambda x:int(x.replace(' ','')), line.strip().split(','))) for line in fid]
+	
 	def strengthCal(self, dat1, dat2, stre, threshold=0.5):
 		'''
 			Calculates strength of a pixel from the parent pixel based on grayscale difference
