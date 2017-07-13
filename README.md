@@ -13,15 +13,15 @@
 
 ## Usage
 
-### General usage
+### General
 
-	$ python regiongrowingca.py sample/star-white-clipart.jpg sample/seeds
+	$ python rgca.py sample/star-white-clipart.jpg sample/seeds
 
 runs with threshold (`-t`) of 0.5 and with number of iterations (`-i`) of 50 as default
 
-From terminal
+From terminals
 
-	$ python regiongrowingca.py sample/star-white-clipart.jpg sample/seeds -t 0.7 -i 75
+	$ python rgca.py sample/star-white-clipart.jpg sample/seeds -t 0.7 -i 75
 
 reads ``sample/star-white-clipart.jpg`` from sample folder with seeds given in an utf-8 encoded file as like ``sample/seeds`` with threshold of 0.7 and number of iterations as 75
 
@@ -31,6 +31,6 @@ Seeds are be of assumed format
 	n3,n4
 Run
 	
-	$ python regiongrowingca.py -h
+	$ python rgca.py -h
 
-for help regarding arguments to be passed via terminal
+for help regarding arguments to be passed
