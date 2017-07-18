@@ -1,4 +1,5 @@
-import argparse, os
+import argparse
+import os
 from scipy import ndimage
 from src.utilities import *
 from src.methods import RegionGrowing
