@@ -1,8 +1,7 @@
-import argparse
-import numpy as np
+import argparse, os
 from scipy import ndimage
-from utilities import PreprocessingImage
-from methods import RegionGrowing
+from src.utilities import *
+from src.methods import RegionGrowing
 
 parser = argparse.ArgumentParser(prog='rgca', description='Arguments for Region growing based segmentation')
 parser.add_argument('pathToImageFile', metavar='ImagePath', type=str, help='Path for the image file')
@@ -13,8 +12,10 @@ parser.add_argument('-i', '--iterations', metavar='i', nargs='?', type=int, defa
                     help='Number of iterations used for growing')
 args = parser.parse_args()
 
-image_array = ndimage.imread(args.pathToImageFile)
-if len(np.shape(image_array)) > 2:
-    image_array = PreprocessingImage().rgbToGrayscaleConversion(image_array)
-
-RegionGrowing().regionGrowing(image_array, args.pathToSeeds, args.cutoffThreshold, args.iterations)
+if os.path.isfile(args.pathToImageFile):
+    image_array = ndimage.imread(args.pathToImageFile)
+    if len(np.shape(image_array)) > 2:
+        image_array = rgb_to_gray_scale_conversion(image_array)
+    RegionGrowing().region_growing(image_array, args.pathToSeeds, args.cutoffThreshold, args.iterations)
+else:
+    raise Exception("File not found in the path provided.")
